@@ -11,7 +11,7 @@ header {
     display: flex;
     justify-content: center;
 }
-.t img {
+header img {
      max-width: 100px;
     max-height: 100px;
     padding: 10px;
