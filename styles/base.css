@@ -98,7 +98,7 @@ main {
 }
 
 
-main h2 {
+main h2, main h1 {
     background-color: rgb(51, 110, 247);
     color: whitesmoke;
     grid-column: 1/4;
