@@ -57,6 +57,7 @@ main {
     grid-row: 2;
     grid-column: 3;
     grid-template-rows: 70px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .im img{
@@ -65,11 +66,11 @@ main {
 }
 
 .im p {
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
+
 .right .im {
-    display: grid;
+    grid-column: 2;
     grid-template-rows: 60px 30px;
 }
 
