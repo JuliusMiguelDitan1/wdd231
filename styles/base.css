@@ -12,6 +12,7 @@ header {
     justify-content: center;
 }
 header img {
+    grid-row: 1;
      max-width: 100px;
     max-height: 100px;
     padding: 10px;
