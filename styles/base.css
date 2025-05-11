@@ -11,8 +11,7 @@ header {
     display: flex;
     justify-content: center;
 }
-header img {
-    grid-row: 1;
+.t img {
      max-width: 100px;
     max-height: 100px;
     padding: 10px;
@@ -97,6 +96,7 @@ main {
     margin: 10px;
     
 }
+
 
 main h2 {
     background-color: rgb(51, 110, 247);
