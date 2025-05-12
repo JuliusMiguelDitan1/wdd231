@@ -87,7 +87,8 @@ main {
     background-color: rgba(178, 178, 178, 0.526);
     display: grid;
     grid-column: 1/4;
-    grid-template-rows: 70px 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 70px 100px;
 }
 
 
@@ -106,7 +107,58 @@ main h2, main h1 {
     justify-content: center;
 }
 
+.bot .list {
+grid-column: 1/4;
+grid-row: 2;
+}
 
+.filter-buttons {
+    grid-row: 2;
+    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+    }
+
+    .filter-buttons button {
+      padding: 30px 35px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 4px;
+    }
+
+    .filter-buttons button.active {
+      background-color: #0056b3;
+    }
+
+    .courses-list {
+        grid-row: 3;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .course-button {
+      padding: 50px 55px;
+      font-size: 20px;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      cursor: default;
+    }
+
+    .completed {
+      background-color: #c59a0d; /* green */
+    }
+
+    .not-completed {
+      background-color: #dc3545; /* red */
+    }
 
 footer {
     background-color: black;

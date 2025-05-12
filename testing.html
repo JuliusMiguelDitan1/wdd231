@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Course Grid 3x3</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .filter-buttons {
+       margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+    }
+
+    .filter-buttons button {
+      padding: 10px 15px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 4px;
+    }
+
+    .filter-buttons button.active {
+      background-color: #0056b3;
+    }
+
+    .courses-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .course-button {
+      padding: 20px;
+      font-size: 14px;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      text-align: center;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: default;
+    }
+
+    .completed {
+      background-color: #28a745; /* green */
+    }
+
+    .not-completed {
+      background-color: #dc3545; /* red */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Courses</h1>
+  <div class="filter-buttons" id="subjectButtons"></div>
+  <div class="courses-list" id="coursesContainer"></div>
+
+  <script>
+    const courses = [
+      { subject: 'CSE', number: 110, title: 'Introduction to Programming', credits: 2, certificate: 'Web and Computer Programming', description: 'Intro to programming...', technology: ['Python'], completed: true },
+      { subject: 'WDD', number: 130, title: 'Web Fundamentals', credits: 2, certificate: 'Web and Computer Programming', description: 'Intro to web...', technology: ['HTML', 'CSS'], completed: true },
+      { subject: 'CSE', number: 111, title: 'Programming with Functions', credits: 2, certificate: 'Web and Computer Programming', description: 'Organize and use functions...', technology: ['Python'], completed: true },
+      { subject: 'CSE', number: 210, title: 'Programming with Classes', credits: 2, certificate: 'Web and Computer Programming', description: 'Intro to OOP...', technology: ['C#'], completed: true },
+      { subject: 'WDD', number: 131, title: 'Dynamic Web Fundamentals', credits: 2, certificate: 'Web and Computer Programming', description: 'Dynamic HTML/CSS/JS...', technology: ['HTML', 'CSS', 'JavaScript'], completed: false },
+      { subject: 'WDD', number: 231, title: 'Frontend Web Development I', credits: 2, certificate: 'Web and Computer Programming', description: 'Frontend development...', technology: ['HTML', 'CSS', 'JavaScript'], completed: false }
+    ];
+
+    const subjectButtons = document.getElementById('subjectButtons');
+    const coursesContainer = document.getElementById('coursesContainer');
+
+    function createFilterButtons() {
+      const subjects = [...new Set(courses.map(course => course.subject))];
+      
+      const allBtn = document.createElement('button');
+      allBtn.textContent = 'All';
+      allBtn.dataset.subject = 'all';
+      allBtn.classList.add('active');
+      subjectButtons.appendChild(allBtn);
+
+      subjects.forEach(subject => {
+        const btn = document.createElement('button');
+        btn.textContent = subject;
+        btn.dataset.subject = subject;
+        subjectButtons.appendChild(btn);
+      });
+
+      subjectButtons.addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON') {
+          const selectedSubject = e.target.dataset.subject;
+          document.querySelectorAll('.filter-buttons button').forEach(btn => btn.classList.remove('active'));
+          e.target.classList.add('active');
+          displayCourses(selectedSubject);
+        }
+      });
+    }
+
+    function displayCourses(subjectFilter = 'all') {
+      coursesContainer.innerHTML = '';
+
+      const filteredCourses = subjectFilter === 'all'
+        ? courses
+        : courses.filter(course => course.subject === subjectFilter);
+
+      const coursesToShow = filteredCourses.slice(0, 9); // Limit to 3x3 = 9
+
+      coursesToShow.forEach(course => {
+        const btn = document.createElement('button');
+        btn.classList.add('course-button');
+        btn.textContent = `${course.title} (${course.number})`;
+        btn.classList.add(course.completed ? 'completed' : 'not-completed');
+        coursesContainer.appendChild(btn);
+      });
+    }
+
+    createFilterButtons();
+    displayCourses();
+  </script>
+
+</body>
+</html>

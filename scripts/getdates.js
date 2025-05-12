@@ -15,7 +15,7 @@ const courses = [
         technology: [
             'Python'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -28,7 +28,7 @@ const courses = [
             'HTML',
             'CSS'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -40,7 +40,7 @@ const courses = [
         technology: [
             'Python'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -52,7 +52,7 @@ const courses = [
         technology: [
             'C#'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -83,3 +83,52 @@ const courses = [
         completed: false
     }
 ]
+const subjectButtons = document.getElementById('subjectButtons');
+    const coursesContainer = document.getElementById('coursesContainer');
+
+    function createFilterButtons() {
+      const subjects = [...new Set(courses.map(course => course.subject))];
+      
+      // Add "All" button
+      const allBtn = document.createElement('button');
+      allBtn.textContent = 'All';
+      allBtn.dataset.subject = 'all';
+      allBtn.classList.add('active');
+      subjectButtons.appendChild(allBtn);
+
+      subjects.forEach(subject => {
+        const btn = document.createElement('button');
+        btn.textContent = subject;
+        btn.dataset.subject = subject;
+        subjectButtons.appendChild(btn);
+      });
+
+      subjectButtons.addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON') {
+          const selectedSubject = e.target.dataset.subject;
+          document.querySelectorAll('.filter-buttons button').forEach(btn => btn.classList.remove('active'));
+          e.target.classList.add('active');
+          displayCourses(selectedSubject);
+        }
+      });
+    }
+
+    function displayCourses(subjectFilter = 'all') {
+      coursesContainer.innerHTML = '';
+
+      const filteredCourses = subjectFilter === 'all'
+        ? courses
+        : courses.filter(course => course.subject === subjectFilter);
+
+      filteredCourses.forEach(course => {
+        const btn = document.createElement('button');
+        btn.classList.add('course-button');
+        btn.textContent = `${course.title} (${course.number})`;
+        btn.classList.add(course.completed ? 'completed' : 'not-completed');
+        coursesContainer.appendChild(btn);
+      });
+    }
+
+    // Initialize
+    createFilterButtons();
+    displayCourses();
