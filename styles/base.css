@@ -32,15 +32,15 @@ header li {
 
 nav a {
 	display: block;
-    padding: 5px;
+    padding: 5px;;
     font-family: var(--font-family);
-	color: rgb(32, 148, 148);
+	color: rgb(84, 246, 246);
 	font-size: 2.2rem;
     text-decoration: none;
 }
 
 nav a:hover {
-	color: rgba(39, 159, 147, 0.882);
+	color: rgba(80, 255, 238, 0.748);
 	font-weight: 700;
 	text-decoration: underline;
 }
