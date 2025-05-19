@@ -1,372 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WDD 231: Web Frontend Development I - Julius Miguel Ditan</title>
-  <meta name="description" content="WDD 231 homepage with personal and coursework details."/>
-  <meta name="author" content="Julius Miguel Ditan"/>
-  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet" />
-
+  <meta charset="UTF-8">
+  <title>Company Directory</title>
   <style>
-    :root { --font-family: "Teko", serif; }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
       font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
     }
 
-    header {
-      background-color: black;
-      color: whitesmoke;
-      display: grid;
-      grid-template-rows: auto auto;
-    }
-
-    .t {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      padding: 10px;
-    }
-
-    .t img {
-      max-width: 100px;
-      max-height: 100px;
-      border-radius: 50%;
-    }
-
-    header nav {
-      background-color: rgba(169, 169, 169, 0.415);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      padding: 10px;
-    }
-
-    .hamburger {
-      display: none;
-      font-size: 2rem;
-      color: white;
-      cursor: pointer;
-    }
-
-    .nav-links {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      list-style: none;
-      width: 100%;
-    }
-
-    .nav-links li {
-      display: flex;
-      justify-content: center;
-    }
-
-    nav a {
-      display: block;
-      padding: 5px;
-      font-family: var(--font-family);
-      color: rgb(84, 246, 246);
-      font-size: 2.2rem;
-      text-decoration: none;
-    }
-
-    nav a:hover {
-      color: rgba(80, 255, 238, 0.748);
-      font-weight: 700;
-      text-decoration: underline;
-    }
-
-    main {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: auto auto auto;
-      padding: 10px;
-    }
-
-    main h1, main h2 {
-      grid-column: 1 / -1;
+    h1 {
       text-align: center;
-      background-color: rgb(51, 110, 247);
-      color: white;
-      padding: 10px;
     }
 
-    .left, .right, .bot {
-      margin: 10px;
-      background-color: rgba(178, 178, 178, 0.69);
-      height: auto;
-      padding: 10px;
+    .view-toggle {
+      text-align: center;
+      margin-bottom: 20px;
     }
 
-    .left {
-      grid-column: 1 / 3;
-      background-color: rgba(178, 178, 178, 0.69);
-      padding: 15px;
-    }
-
-    .left ul {
-      list-style: none;
-      padding-left: 20px;  /* Space between left edge and the list */
-    }
-
-    .left ul li {
-      margin-bottom: 10px; /* Space between each list item */
-    }
-
-    .right {
-      grid-column: 3 / 4;
-      background-color: rgba(152, 151, 151, 0.985);
-    }
-
-    .right .im {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .im img {
-      max-width: 100%;
-      max-height: 300px;
-    }
-
-    .bot {
-      grid-column: 1 / -1;
-    }
-
-    .filter-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin: 10px 0;
-    }
-
-    .filter-buttons button {
+    .view-toggle button {
+      margin: 0 10px;
       padding: 10px 20px;
-      font-size: 18px;
-      background-color: #336ef7;
-      color: white;
+      cursor: pointer;
+    }
+
+    .company-container.grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .company-container.list {
+      display: block;
+    }
+
+    .company-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .grid .company-card {
+      text-align: center;
+    }
+
+    .grid .company-card img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .list .company-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .list .company-card .details {
+      flex-grow: 1;
+    }
+
+    .list .company-card h2 {
+      margin: 0;
+    }
+
+    .company-card button {
+      margin-top: 10px;
+      padding: 6px 12px;
       border: none;
+      background-color: #007BFF;
+      color: white;
       border-radius: 4px;
       cursor: pointer;
     }
 
-    .filter-buttons button.active {
+    .company-card button:hover {
       background-color: #0056b3;
-    }
-
-    .courses-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-
-    .course-button {
-      padding: 20px;
-      color: white;
-      font-size: 18px;
-      border-radius: 4px;
-      text-align: center;
-    }
-
-    .completed {
-      background-color: #8b6c04;
-    }
-
-    .not-completed {
-      background-color: #dc3545;
-    }
-
-    footer {
-      background-color: black;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-
-    /* New box for the list inside the left section */
-    .left .list-box {
-      border: 2px solid #336ef7;
-      padding: 15px;
-      margin-top: 10px;
-      background-color: #f4f4f4;
-    }
-
-    /* Media query for mobile responsiveness */
-    @media (max-width: 768px) {
-      .hamburger {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: rgba(169, 169, 169, 0.95);
-        width: 100%;
-        z-index: 999;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-
-      .nav-links li {
-        justify-content: flex-start;
-        padding: 10px 20px;
-      }
-
-      nav a {
-        font-size: 1.5rem;
-        text-align: left;
-      }
-
-      main {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .left, .right, .bot {
-        width: 100%;
-        margin: 10px 0;
-      }
-
-      .courses-list {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .t img {
-        max-width: 80px;
-        max-height: 80px;
-      }
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <div class="t">
-      <img src="https://via.placeholder.com/100" alt="Profile Image" />
-      <h2>Julius Miguel Ditan</h2>
-    </div>
-    <nav>
-      <div class="hamburger" id="hamburger">&#9776;</div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Chamber</a></li>
-        <li><a href="#">Final</a></li>
-        <li><a href="#">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/julius-miguel-ditan-549a9422b/">LinkedIn</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <h1>WDD 231: Web Frontend Development I - Julius Miguel Ditan</h1>
+  <h1>Company Directory</h1>
 
-    <section class="left">
-      <h2>Course Work</h2>
-        <ul>
-          <li>Project 1</li>
-          <li>Project 2</li>
-          <li>Project 3</li>
-        </ul>
-    </section>
+  <div class="view-toggle">
+    <button onclick="switchView('grid')">Grid View</button>
+    <button onclick="switchView('list')">List View</button>
+  </div>
 
-    <section class="right">
-      <h2>Cavite, Philippines</h2>
-      <div class="im">
-        <img src="https://via.placeholder.com/500x300" alt="Cavite Seaside" />
-        <p>Cavite Seaside</p>
-      </div>
-    </section>
-
-    <section class="bot">
-      <h2>Web and Computer Programming Certificate</h2>
-      <div class="filter-buttons" id="subjectButtons"></div>
-      <div class="courses-list" id="coursesContainer"></div>
-    </section>
-  </main>
-
-  <footer>
-    <p>©2025 | Julius Miguel Ditan | Philippines</p>
-    <p id="full"></p>
-  </footer>
+  <div id="company-container" class="company-container grid"></div>
 
   <script>
-    const full = document.querySelector("#full");
-    const today = new Date(document.lastModified);
-    full.innerHTML = "Last Modified: " + today.toLocaleString();
-
-    const courses = [
-      { subject: 'CSE', number: 110, title: 'Intro to Programming', credits: 2, certificate: 'Web and Computer Programming', technology: ['Python'], completed: true },
-      { subject: 'WDD', number: 130, title: 'Web Fundamentals', credits: 2, certificate: 'Web and Computer Programming', technology: ['HTML', 'CSS'], completed: true },
-      { subject: 'CSE', number: 111, title: 'Programming with Functions', credits: 2, certificate: 'Web and Computer Programming', technology: ['Python'], completed: true },
-      { subject: 'CSE', number: 210, title: 'Programming with Classes', credits: 2, certificate: 'Web and Computer Programming', technology: ['C#'], completed: true },
-      { subject: 'WDD', number: 131, title: 'Dynamic Web Fundamentals', credits: 2, certificate: 'Web and Computer Programming', technology: ['HTML', 'CSS', 'JavaScript'], completed: false },
-      { subject: 'WDD', number: 231, title: 'Frontend Web Development I', credits: 2, certificate: 'Web and Computer Programming', technology: ['HTML', 'CSS', 'JavaScript'], completed: false },
+    const companies = [
+      {
+        "name": "NovaTech Solutions",
+        "address": "123 Innovation Way, San Francisco, CA 94105",
+        "phone_number": "+1-415-555-0123",
+        "website_url": "https://novatechsolutions.com",
+        "image_file": "novatech_logo.png",
+        "membership_level": 1,
+        "joined_date": "2023-04-10",
+        "status": "active",
+        "notes": "New startup specializing in AI tools"
+      },
+      {
+        "name": "BluePeak Systems",
+        "address": "456 Skyline Drive, Denver, CO 80202",
+        "phone_number": "+1-303-555-0175",
+        "website_url": "https://bluepeaksystems.com",
+        "image_file": "bluepeak_logo.png",
+        "membership_level": 3,
+        "joined_date": "2021-09-22",
+        "status": "active",
+        "notes": "Gold member with global operations"
+      },
+      {
+        "name": "GreenCore Industries",
+        "address": "789 Eco Park Blvd, Portland, OR 97201",
+        "phone_number": "+1-971-555-0181",
+        "website_url": "https://greencoreindustries.com",
+        "image_file": "greencore_logo.png",
+        "membership_level": 2,
+        "joined_date": "2022-02-18",
+        "status": "pending",
+        "notes": "Environmentally-focused manufacturing firm"
+      },
+      {
+        "name": "NextGen Analytics",
+        "address": "321 Data Lane, Austin, TX 73301",
+        "phone_number": "+1-512-555-0102",
+        "website_url": "https://nextgenanalytics.ai",
+        "image_file": "nextgen_logo.png",
+        "membership_level": 1,
+        "joined_date": "2024-06-05",
+        "status": "active",
+        "notes": "Specializes in predictive modeling"
+      },
+      {
+        "name": "Urban Hive Collective",
+        "address": "654 Metro Blvd, Chicago, IL 60616",
+        "phone_number": "+1-312-555-0133",
+        "website_url": "https://urbanhivecollective.com",
+        "image_file": "urbanhive_logo.png",
+        "membership_level": 2,
+        "joined_date": "2023-01-27",
+        "status": "active",
+        "notes": "Community co-working and innovation hub"
+      },
+      {
+        "name": "CloudBridge Networks",
+        "address": "987 Fiber Street, Seattle, WA 98104",
+        "phone_number": "+1-206-555-0119",
+        "website_url": "https://cloudbridgenetworks.net",
+        "image_file": "cloudbridge_logo.png",
+        "membership_level": 1,
+        "joined_date": "2022-07-12",
+        "status": "inactive",
+        "notes": "Currently restructuring IT services"
+      },
+      {
+        "name": "Solaris Energy Group",
+        "address": "111 Sunpark Drive, Phoenix, AZ 85004",
+        "phone_number": "+1-602-555-0167",
+        "website_url": "https://solarisenergygroup.com",
+        "image_file": "solaris_logo.png",
+        "membership_level": 3,
+        "joined_date": "2020-05-01",
+        "status": "active",
+        "notes": "Renewable energy leader, lifetime gold member"
+      }
     ];
 
-    const subjectButtons = document.getElementById('subjectButtons');
-    const coursesContainer = document.getElementById('coursesContainer');
+    function switchView(view) {
+      const container = document.getElementById("company-container");
+      container.className = `company-container ${view}`;
+      renderCompanies(view);
+    }
 
-    function createFilterButtons() {
-      const subjects = [...new Set(courses.map(course => course.subject))];
-      const allBtn = document.createElement('button');
-      allBtn.textContent = 'All';
-      allBtn.dataset.subject = 'all';
-      allBtn.classList.add('active');
-      subjectButtons.appendChild(allBtn);
+    function renderCompanies(view) {
+      const container = document.getElementById("company-container");
+      container.innerHTML = '';
 
-      subjects.forEach(subject => {
-        const btn = document.createElement('button');
-        btn.textContent = subject;
-        btn.dataset.subject = subject;
-        subjectButtons.appendChild(btn);
-      });
+      companies.forEach(company => {
+        const year = new Date(company.joined_date).getFullYear();
 
-      subjectButtons.addEventListener('click', (e) => {
-        if (e.target.tagName === 'BUTTON') {
-          const selected = e.target.dataset.subject;
-          document.querySelectorAll('.filter-buttons button').forEach(btn => btn.classList.remove('active'));
-          e.target.classList.add('active');
-          displayCourses(selected);
+        if (view === "grid") {
+          container.innerHTML += `
+            <div class="company-card">
+              <img src="images/${company.image_file}" alt="${company.image_file} Logo">
+              <h2>${company.name}</h2>
+              <p><strong>Joined:</strong> ${year}</p>
+              <button onclick="showDetails('${company.name}', '${company.address}', '${company.phone_number}', '${company.website_url}', '${company.notes}')">See More</button>
+            </div>
+          `;
+        } else {
+          container.innerHTML += `
+            <div class="company-card">
+              <div class="details">
+                <h2>${company.name}</h2>
+                <p><strong>Joined:</strong> ${year}</p>
+              </div>
+              <button onclick="showDetails('${company.name}', '${company.address}', '${company.phone_number}', '${company.website_url}', '${company.notes}')">See More</button>
+            </div>
+          `;
         }
       });
     }
 
-    function displayCourses(subjectFilter = 'all') {
-      coursesContainer.innerHTML = '';
-      const filtered = subjectFilter === 'all' ? courses : courses.filter(c => c.subject === subjectFilter);
-
-      filtered.forEach(course => {
-        const btn = document.createElement('button');
-        btn.className = `course-button ${course.completed ? 'completed' : 'not-completed'}`;
-        btn.textContent = `${course.title} (${course.number})`;
-        coursesContainer.appendChild(btn);
-      });
+    function showDetails(name, address, phone, website, notes) {
+      alert(`Details for ${name}\n\nAddress: ${address}\nPhone: ${phone}\nWebsite: ${website}\nNotes: ${notes}`);
     }
 
-    // Initialize
-    createFilterButtons();
-    displayCourses();
-
-    // Hamburger menu
-    document.getElementById('hamburger').addEventListener('click', () => {
-      document.getElementById('navLinks').classList.toggle('show');
-    });
+    // Default view
+    renderCompanies("grid");
   </script>
+
 </body>
 </html>

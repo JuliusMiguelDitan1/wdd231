@@ -1,0 +1,79 @@
+{ "company": [ {
+        "name": "NovaTech Solutions",
+        "address": "123 Innovation Way, San Francisco, CA 94105",
+        "phone_number": "+1-415-555-0123",
+        "website_url": "https://novatechsolutions.com",
+        "image_file": "novatech_logo.png",
+        "membership_level": 1,
+        "joined_date": "2023-04-10",
+        "status": "active",
+        "notes": "New startup specializing in AI tools"
+      },
+      {
+        "name": "BluePeak Systems",
+        "address": "456 Skyline Drive, Denver, CO 80202",
+        "phone_number": "+1-303-555-0175",
+        "website_url": "https://bluepeaksystems.com",
+        "image_file": "bluepeak_logo.png",
+        "membership_level": 3,
+        "joined_date": "2021-09-22",
+        "status": "active",
+        "notes": "Gold member with global operations"
+      },
+      {
+        "name": "GreenCore Industries",
+        "address": "789 Eco Park Blvd, Portland, OR 97201",
+        "phone_number": "+1-971-555-0181",
+        "website_url": "https://greencoreindustries.com",
+        "image_file": "greencore_logo.png",
+        "membership_level": 2,
+        "joined_date": "2022-02-18",
+        "status": "pending",
+        "notes": "Environmentally-focused manufacturing firm"
+      },
+      {
+        "name": "NextGen Analytics",
+        "address": "321 Data Lane, Austin, TX 73301",
+        "phone_number": "+1-512-555-0102",
+        "website_url": "https://nextgenanalytics.ai",
+        "image_file": "nextgen_logo.png",
+        "membership_level": 1,
+        "joined_date": "2024-06-05",
+        "status": "active",
+        "notes": "Specializes in predictive modeling"
+      },
+      {
+        "name": "Urban Hive Collective",
+        "address": "654 Metro Blvd, Chicago, IL 60616",
+        "phone_number": "+1-312-555-0133",
+        "website_url": "https://urbanhivecollective.com",
+        "image_file": "urbanhive_logo.png",
+        "membership_level": 2,
+        "joined_date": "2023-01-27",
+        "status": "active",
+        "notes": "Community co-working and innovation hub"
+      },
+      {
+        "name": "CloudBridge Networks",
+        "address": "987 Fiber Street, Seattle, WA 98104",
+        "phone_number": "+1-206-555-0119",
+        "website_url": "https://cloudbridgenetworks.net",
+        "image_file": "cloudbridge_logo.png",
+        "membership_level": 1,
+        "joined_date": "2022-07-12",
+        "status": "inactive",
+        "notes": "Currently restructuring IT services"
+      },
+      {
+        "name": "Solaris Energy Group",
+        "address": "111 Sunpark Drive, Phoenix, AZ 85004",
+        "phone_number": "+1-602-555-0167",
+        "website_url": "https://solarisenergygroup.com",
+        "image_file": "solaris_logo.png",
+        "membership_level": 3,
+        "joined_date": "2020-05-01",
+        "status": "active",
+        "notes": "Renewable energy leader, lifetime gold member"
+      }
+    ]
+}
