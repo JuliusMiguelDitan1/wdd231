@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.ico">
-    <title>Chamber of Commerce Directory Page</title>
+    <title>Index Page</title>
 
-    <meta name="description" content="this is the Chamber of Commerce Directory Page. mainly contains info on the Commerce and businesses">
+    <meta name="description" content="this is the index Page. mainly contains the map and weather info">
     <meta name="author" content="Julius Miguel Ditan">
     <meta property="og:title" content="Chamber of Commerce Directory Page">
     <meta property="og:description" content="This is the Chamber of Commerce Directory Page, containing info on commerce and local businesses.">
     <meta property="og:image" content="https://juliusmiguelditan1.github.io/wdd231/chamber/images/profile.jpg">
-    <meta property="og:url" content="https://juliusmiguelditan1.github.io/wdd231/chamber/directory.html">
+    <meta property="og:url" content="https://juliusmiguelditan1.github.io/wdd231/chamber/index.html">
 
-    <link rel="stylesheet" href="styles/directory.css">
+    <link rel="stylesheet" href="styles/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
-    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/index.js" defer></script>
 
 </head>
 <body>
     <header>
         <div class="t"> 
             <img src="images/profile.jpg" alt="profile.jpg">
-             <h2>Chamber of Commerce Directory Page</h2>
+             <h2>Index Page</h2>
         </div>
             <nav>
     <div class="hamburger" id="hamburger">&#9776;</div>
@@ -37,15 +37,38 @@
     </ul>
 </nav>
      </header>
-     <main>
-        <h1>Chamber of Commerce Directory Page</h1>
-       <div class="view-toggle">
-  <button onclick="switchView('grid')">Grid View</button>
-  <button onclick="switchView('list')">List View</button>
-</div>
+     <!-- Hero Section -->
+<section class="hero">
+  <img src="images/phil.webp" alt="Hero Image" class="hero-image" />
+  <button class="hero-button">Keynote Tickets</button>
+</section>
 
-<div id="company-container" class="company-container grid"></div>
-    </main>
+<!-- Main Content -->
+<main class="content">
+    <section class="events">
+      <h2>Events</h2>
+      <!-- Event content -->
+    </section>
+
+    <section class="weather">
+  <div class="weather-container">
+    <div id="currentWeather" class="current-weather">
+      <h3>Current Weather</h3>
+    </div>
+    <div id="weatherForecast" class="weather-forecast">
+      <h3>Weather Forecast</h3>
+    </div>
+  </div>
+</section>
+
+<!-- Spotlights Section -->
+<section id="spotlights" class="spotlights">
+  <h2>Member Spotlights</h2>
+  <div class="spotlights-container">
+    <!-- Spotlight cards will be inserted here by JavaScript -->
+  </div>
+</section>
+  </main>
     <footer>
         <p>©2025 | Julius Miguel Ditan | Philippines |</p><br>
         <p id="full"></p>
