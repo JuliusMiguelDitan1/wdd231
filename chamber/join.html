@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.ico">
+    <title>Join us</title>
+
+    <meta name="description" content="This is the Join us Page. mainly contains fill up and other info">
+    <meta name="author" content="Julius Miguel Ditan">
+    <meta property="og:title" content="Join us page">
+    <meta property="og:description" content="This is the Join us Page. mainly contains fill up and other info">
+    <meta property="og:image" content="https://juliusmiguelditan1.github.io/wdd231/chamber/images/profile.jpg">
+    <meta property="og:url" content="https://juliusmiguelditan1.github.io/wdd231/chamber/join.html">
+
+    <link rel="stylesheet" href="styles/join.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <script src="scripts/join.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <div class="t"> 
+            <img src="images/profile.jpg" alt="profile.jpg">
+             <h2>Home Page</h2>
+        </div>
+            <nav>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>    
+        <li><a href="directory.html">Chamber</a></li>
+        <li><a href="">Final</a></li>
+        <li><a href="">Github Profile</a></li>
+        <li><a href="https://www.linkedin.com/in/julius-miguel-ditan-549a9422b/">Linkedin</a></li>
+    </ul>
+</nav>
+     </header>
+
+<main class="join-main">
+  <h1>Join the Chamber</h1>
+  <form method="get" action="thankyou.html" id="joinForm">
+    <label>
+      First Name:
+      <input type="text" name="firstName" title="Enter your first name" autocomplete="given-name" required>
+    </label>
+
+    <label>
+      Last Name:
+      <input type="text" name="lastName" title="Enter your last name" autocomplete="family-name" required>
+    </label>
+
+    <label>
+      Organizational Title:
+      <input type="text" name="orgTitle" title="Enter your title in the organization" autocomplete="organization-title" pattern="[A-Za-z\-\s]{7,}">
+    </label>
+
+    <label>
+      Email:
+      <input type="email" name="email" title="Enter a valid email address" autocomplete="email" required placeholder="name@example.com">
+    </label>
+
+    <label>
+      Mobile Phone:
+      <input type="tel" name="phone" title="Enter your mobile phone number" autocomplete="tel" required>
+    </label>
+
+    <label>
+      Business/Organization Name:
+      <input type="text" name="organization" title="Enter your organization name" autocomplete="organization" required>
+    </label>
+
+    <label>
+      Membership Level:
+      <select name="membership" title="Select a membership level" required>
+        <option value="NP">NP Membership (Free)</option>
+        <option value="Bronze">Bronze Membership</option>
+        <option value="Silver">Silver Membership</option>
+        <option value="Gold">Gold Membership</option>
+      </select>
+    </label>
+
+    <label>
+      Organization Description:
+      <textarea name="description" title="Describe your business or organization"></textarea>
+    </label>
+
+    <input type="hidden" name="timestamp" id="timestamp">
+
+    <input type="submit" value="Submit Application">
+  </form>
+
+  <section class="membership-cards">
+    <div class="card" id="np-card">
+      <h2>NP Membership</h2>
+      <p>Ideal for nonprofits, free of charge.</p>
+      <a href="#npModal">View Benefits</a>
+    </div>
+
+    <div class="card" id="bronze-card">
+      <h2>Bronze Membership</h2>
+      <p>Affordable plan with basic benefits.</p>
+      <a href="#bronzeModal">View Benefits</a>
+    </div>
+
+    <div class="card" id="silver-card">
+      <h2>Silver Membership</h2>
+      <p>Mid-tier with extra features.</p>
+      <a href="#silverModal">View Benefits</a>
+    </div>
+
+    <div class="card" id="gold-card">
+      <h2>Gold Membership</h2>
+      <p>Top-tier access with maximum perks.</p>
+      <a href="#goldModal">View Benefits</a>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <dialog id="npModal">
+    <h2>NP Membership Benefits</h2>
+    <p>Free membership. Access to select events and networking opportunities.</p>
+    <button onclick="document.getElementById('npModal').close()">Close</button>
+  </dialog>
+
+  <dialog id="bronzeModal">
+    <h2>Bronze Membership Benefits</h2>
+    <p>Basic event access, newsletter inclusion, and member directory listing.</p>
+    <button onclick="document.getElementById('bronzeModal').close()">Close</button>
+  </dialog>
+
+  <dialog id="silverModal">
+    <h2>Silver Membership Benefits</h2>
+    <p>Includes Bronze benefits plus event discounts and promotional features.</p>
+    <button onclick="document.getElementById('silverModal').close()">Close</button>
+  </dialog>
+
+  <dialog id="goldModal">
+    <h2>Gold Membership Benefits</h2>
+    <p>All Silver benefits plus spotlight ads, training access, and VIP events.</p>
+    <button onclick="document.getElementById('goldModal').close()">Close</button>
+  </dialog>
+</main>
+    <footer>
+        <p>©2025 | Julius Miguel Ditan | Philippines |</p><br>
+        <p id="full"></p>
+    </footer>
+</body>
+</html>
