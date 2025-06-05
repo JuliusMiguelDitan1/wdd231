@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Islands &amp; Itineraries PH – Site Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#00695c;
+  --accent:#ffb300;
+  --neutral:#ffffff;
+  --dark:#212121;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:'Open Sans',sans-serif;
+  color:var(--dark);
+  background-color:var(--neutral);
+  line-height:1.6;
+  padding:1rem;
+}
+h1,h2{
+  font-family:'Montserrat',sans-serif;
+  color:var(--primary);
+  margin-top:1.5rem;
+}
+h1{
+  border-bottom:4px solid var(--accent);
+  display:inline-block;
+  padding-bottom:.25rem;
+}
+section{
+  max-width:800px;
+  margin:0 auto 2rem;
+}
+.color-swatch{
+  display:inline-block;
+  width:120px;
+  height:120px;
+  margin-right:1rem;
+  border-radius:6px;
+  box-shadow:0 2px 6px rgba(0,0,0,.15);
+  position:relative;
+}
+.color-swatch span{
+  position:absolute;
+  bottom:6px;
+  left:6px;
+  font-size:.85rem;
+  font-weight:600;
+  color:#fff;
+  text-shadow:0 0 4px rgba(0,0,0,.6);
+}
+figure{
+  margin:2rem 0;
+  text-align:center;
+}
+figcaption{
+  margin-top:.5rem;
+  font-size:.9rem;
+  font-style:italic;
+}
+svg{
+  max-width:100%;
+  height:auto;
+  border:1px solid #ccc;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Islands &amp; Itineraries PH – Site Plan</h1>
+</header>
+
+<section id="site-name">
+  <h2>Site Name</h2>
+  <p><strong>Islands &amp; Itineraries PH</strong></p>
+  <p>This name highlights the Philippines’ 7,600+ islands while promising ready‑made travel routes (“itineraries”). The “PH” suffix instantly signals the geographic focus and helps the name feel like a recognizable brand handle or domain.</p>
+  <p><em>Sample available domain:</em> <code>islandsanditineraries.ph</code></p>
+</section>
+
+<section id="purpose">
+  <h2>Site Purpose</h2>
+  <p>The site helps both local and international travelers decide <em>where</em> to go and <em>how</em> to experience each destination in the Philippines through concise reviews, curated recommendations, downloadable itineraries, and practical travel tips.</p>
+</section>
+
+<section id="scenarios">
+  <h2>Key Audience Scenarios</h2>
+  <ol>
+    <li>“Which Philippine islands are easiest to combine in a one‑week trip?”</li>
+    <li>“What’s the best month to visit Siargao for surfing and avoid typhoons?”</li>
+    <li>“Do you have a budget breakdown for backpacking Palawan?”</li>
+  </ol>
+</section>
+
+<section id="color-scheme">
+  <h2>Color Scheme</h2>
+  <div class="color-swatch" style="background:var(--primary)"><span>#00695C</span></div>
+  <div class="color-swatch" style="background:var(--accent)"><span>#FFB300</span></div>
+  <p><strong>Primary (Teal #00695C)</strong> – used for headings, links, and buttons to evoke tropical seas.<br>
+     <strong>Accent (Sunrise Gold #FFB300)</strong> – used for callouts, icons, and underline accents to suggest warm sunlight.</p>
+</section>
+
+<section id="typography">
+  <h2>Typography</h2>
+  <ul>
+    <li><strong>Montserrat (600/800)</strong> – headings &amp; navigation.</li>
+    <li><strong>Open Sans (400/600)</strong> – body copy, captions, UI labels.</li>
+  </ul>
+</section>
+
+<section id="wireframe">
+  <h2>Wireframes</h2>
+
+  <figure>
+    <!-- Mobile wireframe SVG -->
+    <svg viewBox="0 0 375 667" aria-labelledby="wireframe-mobile-title" role="img">
+      <title id="wireframe-mobile-title">Mobile Homepage Wireframe</title>
+      <rect x="10" y="10" width="355" height="647" fill="#f8f8f8"/>
+      <rect x="30" y="30" width="315" height="50" fill="#d0d0d0"/>
+      <rect x="30" y="100" width="315" height="180" fill="#b0b0b0"/>
+      <rect x="30" y="300" width="315" height="80" fill="#d0d0d0"/>
+      <rect x="30" y="400" width="315" height="80" fill="#d0d0d0"/>
+      <rect x="30" y="500" width="315" height="50" fill="#d0d0d0"/>
+    </svg>
+    <figcaption>Mobile view (≤480 px)</figcaption>
+  </figure>
+
+  <figure>
+    <!-- Desktop wireframe SVG -->
+    <svg viewBox="0 0 1200 800" aria-labelledby="wireframe-desktop-title" role="img">
+      <title id="wireframe-desktop-title">Desktop Homepage Wireframe</title>
+      <rect x="20" y="20" width="1160" height="760" fill="#f8f8f8"/>
+      <rect x="40" y="40" width="1120" height="90" fill="#d0d0d0"/>
+      <rect x="40" y="150" width="740" height="380" fill="#b0b0b0"/>
+      <rect x="800" y="150" width="360" height="180" fill="#d0d0d0"/>
+      <rect x="800" y="350" width="360" height="180" fill="#d0d0d0"/>
+      <rect x="40" y="550" width="1120" height="180" fill="#d0d0d0"/>
+    </svg>
+    <figcaption>Desktop view (≥1024 px)</figcaption>
+  </figure>
+
+</section>
+
+<footer>
+  <p style="font-size:.8rem;text-align:center;">© 2025 Islands &amp; Itineraries PH – Site plan for WDD 231.</p>
+</footer>
+</body>
+</html>
