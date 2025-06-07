@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Sunset Beach",
+    "address": "123 Ocean View Rd, Coast City",
+    "description": "A scenic beach perfect for evening strolls and sunset photography.",
+    "image": "images/beach.webp"
+  },
+  {
+    "name": "Mountain Peak Trail",
+    "address": "789 Summit Ln, Hilltown",
+    "description": "A popular hiking trail offering panoramic views of the valley.",
+    "image": "images/beach.webp"
+  },
+  {
+    "name": "Cultural Heritage Museum",
+    "address": "45 History Blvd, Oldtown",
+    "description": "Explore local history, artifacts, and rotating exhibits in this beautifully preserved museum.",
+    "image": "images/beach.webp"
+  },
+  {
+    "name": "Botanical Gardens",
+    "address": "67 Greenway Ave, Garden City",
+    "description": "A peaceful escape featuring native and exotic plants, waterfalls, and walking paths.",
+    "image": "images/beach.webp"
+  },
+  {
+    "name": "Sky Tower",
+    "address": "101 Skyline Dr, Metroville",
+    "description": "An observation tower offering stunning views and a revolving restaurant at the top.",
+    "image": "images/beach.webp"
+  },
+  {
+    "name": "Downtown Art District",
+    "address": "200 Canvas Ct, Metroville",
+    "description": "A vibrant neighborhood with galleries, murals, and weekly open studio nights.",
+    "image": "images/beach.webp"
+  },
+  {
+    "name": "Riverwalk Park",
+    "address": "312 Riverside Rd, Flowertown",
+    "description": "Family-friendly park with riverside trails, picnic areas, and kayak rentals.",
+    "image": "images/beach.webp"
+  },
+  {
+    "name": "Tech Innovation Center",
+    "address": "500 Silicon Blvd, Innoville",
+    "description": "A hub for startups and tech showcases with interactive exhibits and tours.",
+    "image": "images/beach.webp"
+  }
+]

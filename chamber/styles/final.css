@@ -1,0 +1,217 @@
+:root {
+  --font-family: "Teko", serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: black;
+  color: whitesmoke;
+  display: grid;
+  grid-template-rows: auto auto;
+}
+
+.t {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 10px;
+}
+
+.t img {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+}
+
+header nav {
+  background-color: rgba(169, 169, 169, 0.415);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+  width: 100%;
+}
+
+.nav-links li {
+  display: flex;
+  justify-content: center;
+}
+
+nav a {
+  display: block;
+  padding: 5px;
+  font-family: var(--font-family);
+  color: rgb(84, 246, 246);
+  font-size: 2.2rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: rgba(80, 255, 238, 0.748);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+footer {
+  background-color: black;
+  color: whitesmoke;
+  padding: 15px;
+  text-align: center;
+}
+
+/* ========== CARDS ========== */
+.poi-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  grid-template-areas:
+    "card1"
+    "card2"
+    "card3"
+    "card4"
+    "card5"
+    "card6"
+    "card7"
+    "card8";
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.card__title {
+  font-family: var(--font-family);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card__figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect, only for non-mobile */
+@media (min-width: 641px) {
+  .card__figure img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+}
+
+.card__address {
+  font-style: normal;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.card__description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card__btn {
+  background-color: teal;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.card__btn:hover {
+  background-color: darkslategray;
+}
+
+/* ========== SIDEBAR ========== */
+#sidebar {
+  background-color: #e3f2fd;
+  padding: 1rem;
+  margin: 1rem;
+  border-left: 5px solid #2196f3;
+  font-size: 1.1rem;
+}
+
+/* ========== RESPONSIVE GRID LAYOUTS ========== */
+@media (min-width: 641px) {
+  .poi-grid {
+    grid-template-areas:
+      "card1 card2"
+      "card3 card4"
+      "card5 card6"
+      "card7 card8";
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1025px) {
+  .poi-grid {
+    grid-template-areas:
+      "card1 card2 card3 card4"
+      "card5 card6 card7 card8";
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mobile Nav */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(169, 169, 169, 0.95);
+    width: 100%;
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    justify-content: flex-start;
+    padding: 10px 20px;
+  }
+
+  nav a {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+}
