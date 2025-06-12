@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You</title>
+  <style>
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Teko', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 2rem auto 0;  /* centers horizontally with some top margin */
+    flex-grow: 1;          /* makes main take remaining space */
+  }
+
+  h1 {
+    color: #0077cc;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  dl {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0.5rem 1rem;
+    font-size: 1.2rem;
+  }
+
+  dt {
+    font-weight: 700;
+    color: #005fa3;
+  }
+
+  dd {
+    margin: 0 0 0.5rem 0;
+    word-break: break-word;
+  }
+
+  footer {
+    background-color: black;
+  color: whitesmoke;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto; /* pushes footer to the bottom */
+    box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+  }
+</style>
+</head>
+<body>
+  <main>
+    <h1>Thank You for Your Submission!</h1>
+    <p>We have received your membership application with the following details:</p>
+
+    <dl id="submission-details">
+      <!-- JavaScript will populate this -->
+    </dl>
+  </main>
+
+ <footer>
+        <p>©2025 | Julius Miguel Ditan | Philippines |</p>
+    </footer>
+
+  <script>
+  function getQueryParams() {
+    const params = {};
+    const queryString = window.location.search.slice(1);
+    const pairs = queryString.split("&");
+    for (const pair of pairs) {
+      if (!pair) continue;
+      const [key, value] = pair.split("=");
+      params[decodeURIComponent(key)] = decodeURIComponent(value || "");
+    }
+    return params;
+  }
+
+  const params = getQueryParams();
+
+  const requiredFields = [
+    { key: "firstName", label: "First Name" },
+    { key: "lastName", label: "Last Name" },
+    { key: "email", label: "Email Address" },
+    { key: "phone", label: "Mobile Phone" },          
+    { key: "organization", label: "Business/Organization Name" },  
+    { key: "timestamp", label: "Submitted On" }, 
+  ];
+
+  const dl = document.getElementById("submission-details");
+
+  requiredFields.forEach(({ key, label }) => {
+    const dt = document.createElement("dt");
+    dt.textContent = label;
+
+    const dd = document.createElement("dd");
+    dd.textContent = params[key] || "Not provided";
+
+    dl.appendChild(dt);
+    dl.appendChild(dd);
+  });
+</script>
+
+</body>
+</html>

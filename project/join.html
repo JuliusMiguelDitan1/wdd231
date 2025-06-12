@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Home Site</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/home.css">
+  <script src="scripts/home.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to Our Directory</h1>
+  </header>
+
+  <nav class="navbar">
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="home.html">Home</a>
+      <a href="catalog.html">Catalogs</a>
+      <a href="directory.html">Directory</a>
+      <a href="About.html">About us</a>
+    </div>
+  </nav>
+
+    <main>
+     <h1>Join the Chamber</h1>
+  <form method="get" action="thankyou.html" id="joinForm">
+    <label>
+      First Name:
+      <input type="text" name="firstName" title="Enter your first name" autocomplete="given-name" required>
+    </label>
+
+    <label>
+      Last Name:
+      <input type="text" name="lastName" title="Enter your last name" autocomplete="family-name" required>
+    </label>
+
+    <label>
+      Organizational Title:
+      <input type="text" name="orgTitle" title="Enter your title in the organization" autocomplete="organization-title" pattern="[A-Za-z\-\s]{7,}">
+    </label>
+
+    <label>
+      Email:
+      <input type="email" name="email" title="Enter a valid email address" autocomplete="email" required placeholder="name@example.com">
+    </label>
+
+    <label>
+      Mobile Phone:
+      <input type="tel" name="phone" title="Enter your mobile phone number" autocomplete="tel" required>
+    </label>
+
+    <label>
+      Business/Organization Name:
+      <input type="text" name="organization" title="Enter your organization name" autocomplete="organization" required>
+    </label>
+
+    <label>
+      Membership Level:
+      <select name="membership" title="Select a membership level" required>
+        <option value="" disabled selected hidden>Select membership level</option>
+        <option value="NP">NP Membership (Free)</option>
+        <option value="Bronze">Bronze Membership</option>
+        <option value="Silver">Silver Membership</option>
+        <option value="Gold">Gold Membership</option>
+      </select>
+    </label>
+
+    <label>
+      Organization Description:
+      <textarea name="description" title="Describe your business or organization"></textarea>
+    </label>
+
+    <input type="hidden" name="timestamp" id="timestamp">
+
+    <input type="submit" value="Submit Application">
+  </form>
+    </main>
+
+    <footer>
+        <p>©2025 | Julius Miguel Ditan | Philippines |</p><br>
+        <p id="full"></p>
+    </footer>
+
+</body>
+</html>
