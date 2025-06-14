@@ -1,0 +1,257 @@
+:root {
+  --primary: #00695C;
+  --accent: #FFB300;
+  --neutral: #ffffff;
+  --dark: #212121;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: var(--neutral);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6, nav, .btn {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary);
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background: var(--primary);
+  color: var(--neutral);
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+header h1 {
+  color: var(--neutral);
+  font-weight: 800;
+}
+
+/* Navigation styles */
+.navbar {
+  background: #004d40;
+  position: relative;
+}
+
+.navbar .nav-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.navbar .nav-links a {
+  color: var(--neutral);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+.navbar .nav-links a:hover {
+  background: var(--accent);
+  color: var(--dark);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: var(--neutral);
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+.nav-links.mobile-hidden {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-section {
+  grid-area: footer;
+  background: #eeeeee;
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 2px solid var(--accent);
+}
+
+footer {
+  background: var(--primary);
+  color: var(--neutral);
+  text-align: center;
+  padding: 1rem;
+}
+
+/* View toggle styles */
+.view-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px auto;
+  flex-wrap: wrap;
+}
+
+.view-toggle button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: var(--primary);
+  color: var(--neutral);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.view-toggle button:hover {
+  background-color: var(--accent);
+  color: var(--dark);
+}
+
+/* Company container and card styles */
+.company-container.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+}
+
+.company-container.list {
+  display: block;
+}
+
+.company-card {
+  background: whitesmoke;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.grid .company-card {
+  text-align: center;
+}
+
+.grid .company-card img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.list .company-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list .company-card .details {
+  flex-grow: 1;
+}
+
+.list .company-card h2 {
+  margin: 0;
+}
+
+.company-card button {
+  display: block;
+  margin: 10px auto 0 auto;
+  padding: 6px 12px;
+  border: none;
+  background-color: var(--primary);
+  color: var(--neutral);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.company-card button:hover {
+  background-color: var(--accent);
+  color: var(--dark);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .aside {
+    flex-direction: column;
+  }
+
+  .hamburger {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1rem;
+  }
+
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .navbar .nav-links.show {
+    display: flex;
+  }
+
+  .navbar .nav-links a {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .company-container.grid {
+    grid-template-columns: 1fr; /* single column in mobile */
+  }
+
+  .grid .company-card {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .grid .company-card img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .company-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+
+  .company-card p {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .company-card button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 0 0;
+  }
+}

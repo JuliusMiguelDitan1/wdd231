@@ -7,13 +7,13 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/home.css">
-  <script src="scripts/home.js" defer></script>
+  <link rel="stylesheet" href="styles/join.css">
+  <script src="scripts/join.js" defer></script>
 </head>
 <body>
 
   <header>
-    <h1>Welcome to Our Directory</h1>
+    <h1>Interested in joining?</h1>
   </header>
 
   <nav class="navbar">
@@ -30,60 +30,114 @@
     </div>
   </nav>
 
-    <main>
-     <h1>Join the Chamber</h1>
-  <form method="get" action="thankyou.html" id="joinForm">
-    <label>
-      First Name:
-      <input type="text" name="firstName" title="Enter your first name" autocomplete="given-name" required>
-    </label>
+    <main class="join-main">
+  <h1>Join Us</h1>
 
-    <label>
-      Last Name:
-      <input type="text" name="lastName" title="Enter your last name" autocomplete="family-name" required>
-    </label>
+  <div class="form-and-cards">
+    <form method="get" action="thankyou.html" id="joinForm">
+      <label>
+        First Name:
+        <input type="text" name="firstName" title="Enter your first name" autocomplete="given-name" required>
+      </label>
 
-    <label>
-      Organizational Title:
-      <input type="text" name="orgTitle" title="Enter your title in the organization" autocomplete="organization-title" pattern="[A-Za-z\-\s]{7,}">
-    </label>
+      <label>
+        Last Name:
+        <input type="text" name="lastName" title="Enter your last name" autocomplete="family-name" required>
+      </label>
 
-    <label>
-      Email:
-      <input type="email" name="email" title="Enter a valid email address" autocomplete="email" required placeholder="name@example.com">
-    </label>
+      <label>
+        Organizational Title:
+        <input type="text" name="orgTitle" title="Enter your title in the organization" autocomplete="organization-title" pattern="[A-Za-z\-\s]{7,}">
+      </label>
 
-    <label>
-      Mobile Phone:
-      <input type="tel" name="phone" title="Enter your mobile phone number" autocomplete="tel" required>
-    </label>
+      <label>
+        Email:
+        <input type="email" name="email" title="Enter a valid email address" autocomplete="email" required placeholder="name@example.com">
+      </label>
 
-    <label>
-      Business/Organization Name:
-      <input type="text" name="organization" title="Enter your organization name" autocomplete="organization" required>
-    </label>
+      <label>
+        Mobile Phone:
+        <input type="tel" name="phone" title="Enter your mobile phone number" autocomplete="tel" required>
+      </label>
 
-    <label>
-      Membership Level:
-      <select name="membership" title="Select a membership level" required>
-        <option value="" disabled selected hidden>Select membership level</option>
-        <option value="NP">NP Membership (Free)</option>
-        <option value="Bronze">Bronze Membership</option>
-        <option value="Silver">Silver Membership</option>
-        <option value="Gold">Gold Membership</option>
-      </select>
-    </label>
+      <label>
+        Business/Organization Name:
+        <input type="text" name="organization" title="Enter your organization name" autocomplete="organization" required>
+      </label>
 
-    <label>
-      Organization Description:
-      <textarea name="description" title="Describe your business or organization"></textarea>
-    </label>
+      <label>
+        Membership Level:
+        <select name="membership" title="Select a membership level" required>
+          <option value="" disabled selected hidden>Select membership level</option>
+          <option value="NP">NP Membership (Free)</option>
+          <option value="Bronze">Bronze Membership</option>
+          <option value="Silver">Silver Membership</option>
+          <option value="Gold">Gold Membership</option>
+        </select>
+      </label>
 
-    <input type="hidden" name="timestamp" id="timestamp">
+      <label>
+        Organization Description:
+        <textarea name="description" title="Describe your business or organization"></textarea>
+      </label>
 
-    <input type="submit" value="Submit Application">
-  </form>
-    </main>
+      <input type="hidden" name="timestamp" id="timestamp">
+      <input type="submit" value="Submit Application">
+    </form>
+
+    <section class="membership-cards">
+      <div class="card" id="np-card">
+        <h2>NP Membership</h2>
+        <p>Ideal for nonprofits, free of charge.</p>
+        <a href="#npmodal">View Benefits</a>
+      </div>
+
+      <div class="card" id="bronze-card">
+        <h2>Bronze Membership</h2>
+        <p>Affordable plan with basic benefits.</p>
+        <a href="#bronzemodal">View Benefits</a>
+      </div>
+
+      <div class="card" id="silver-card">
+        <h2>Silver Membership</h2>
+        <p>Mid-tier with extra features.</p>
+        <a href="#silvermodal">View Benefits</a>
+      </div>
+
+      <div class="card" id="gold-card">
+        <h2>Gold Membership</h2>
+        <p>Top-tier access with maximum perks.</p>
+        <a href="#goldmodal">View Benefits</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Modals -->
+  <dialog id="npmodal">
+    <h2>NP Membership Benefits</h2>
+    <p>Free membership. Access to select events and networking opportunities.</p>
+    <button onclick="document.getElementById('npmodal').close()">Close</button>
+  </dialog>
+
+  <dialog id="bronzemodal">
+    <h2>Bronze Membership Benefits</h2>
+    <p>Basic event access, newsletter inclusion, and member directory listing.</p>
+    <button onclick="document.getElementById('bronzemodal').close()">Close</button>
+  </dialog>
+
+  <dialog id="silvermodal">
+    <h2>Silver Membership Benefits</h2>
+    <p>Includes Bronze benefits plus event discounts and promotional features.</p>
+    <button onclick="document.getElementById('silvermodal').close()">Close</button>
+  </dialog>
+
+  <dialog id="goldmodal">
+    <h2>Gold Membership Benefits</h2>
+    <p>All Silver benefits plus spotlight ads, training access, and VIP events.</p>
+    <button onclick="document.getElementById('goldmodal').close()">Close</button>
+  </dialog>
+</main>
+
 
     <footer>
         <p>©2025 | Julius Miguel Ditan | Philippines |</p><br>

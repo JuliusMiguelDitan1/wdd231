@@ -7,8 +7,8 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/home.css">
-  <script src="scripts/home.js" defer></script>
+  <link rel="stylesheet" href="styles/directory.css">
+  <script src="scripts/directory.js" defer></script>
 </head>
 <body>
 
@@ -31,6 +31,13 @@
   </nav>
 
     <main>
+        <h1>Chamber of Commerce Directory Page</h1>
+        <div class="view-toggle">
+          <button onclick="switchView('grid')">Grid View</button>
+          <button onclick="switchView('list')">List View</button>
+        </div>
+
+      <div id="company-container" class="company-container grid"></div>
     
     </main>
 

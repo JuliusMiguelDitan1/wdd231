@@ -7,8 +7,8 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/home.css">
-  <script src="scripts/home.js" defer></script>
+  <link rel="stylesheet" href="styles/catalog.css">
+  <script src="scripts/catalog.js" defer></script>
 </head>
 <body>
 
@@ -31,8 +31,22 @@
   </nav>
 
     <main>
-    
-    </main>
+  <template id="card-template">
+    <article class="card">
+      <h2 class="card__title"></h2>
+      <figure class="card__figure">
+        <img width="300" height="200" loading="lazy" />
+        <figcaption class="visually-hidden"></figcaption>
+      </figure>
+      <address class="card__address"></address>
+      <p class="card__description"></p>
+      <button class="card__btn">Learn more</button>
+    </article>
+  </template>
+
+  <!-- 👇 This is the container your JS is looking for -->
+  <section class="poi-grid"></section>
+</main>
 
     <footer>
         <p>©2025 | Julius Miguel Ditan | Philippines |</p><br>

@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Pagudpud Beach",
+    "address": "Pagudpud, Ilocos Norte",
+    "description": "A northern paradise known for white sand beaches, turquoise waters, and laid-back vibes.",
+    "image": "images/beach.webp"
+  },
+  {
+    "name": "Mt. Pulag National Park",
+    "address": "Kabayan, Benguet",
+    "description": "Home to the ‘sea of clouds’ and Luzon’s highest peak, ideal for trekkers and campers.",
+    "image": "images/beach.webp"
+  },
+  {
+    "name": "Vigan Heritage Village",
+    "address": "Calle Crisologo, Vigan City, Ilocos Sur",
+    "description": "A UNESCO World Heritage Site showcasing Spanish colonial architecture and cobbled streets.",
+    "image": "images/beach.webp"
+  },
+  {
+    "name": "La Mesa Ecopark",
+    "address": "Quezon City, Metro Manila",
+    "description": "A nature sanctuary offering biking, zip-lining, and family picnics in the city.",
+    "image": "images/beach.webp"
+  },
+  {
+    "name": "Taal Volcano and Lake",
+    "address": "Talisay, Batangas",
+    "description": "A unique volcano-in-a-lake-in-an-island attraction with boat tours and viewing decks.",
+    "image": "images/beach.webp"
+  },
+  {
+    "name": "Mayon Volcano Natural Park",
+    "address": "Legazpi City, Albay",
+    "description": "Famous for its perfect cone shape, Mayon offers scenic views, ATV rides, and trails.",
+    "image": "images/beach.webp"
+  },
+  {
+    "name": "Camp John Hay",
+    "address": "Loakan Rd, Baguio City",
+    "description": "A historical mountain resort with pine forests, golfing, and colonial charm.",
+    "image": "images/beach.webp"
+  },
+  {
+    "name": "Las Casas Filipinas de Acuzar",
+    "address": "Bagac, Bataan",
+    "description": "A living museum of reconstructed Spanish-Filipino heritage homes by the sea.",
+    "image": "images/beach.webp"
+  }
+]
+
